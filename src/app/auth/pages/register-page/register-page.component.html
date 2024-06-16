@@ -1,1 +1,258 @@
-<p>register-page works!</p>
+<section class="text-gray-600 body-font">
+  <div class="container px-5 mx-auto flex flex-row">
+    <div class="flex items-center py-20">
+      <div class="p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+        <div class="xl:px-[36rem] lg:px[25rem] md:px-[10rem]"></div>
+        <div class="w-full">
+          <h2 class="text-gray-900 text-3xl font-bold title-font my-10">
+            Sign Up
+          </h2>
+        </div>
+        <form [formGroup]="form" autocomplete="off" (ngSubmit)="onRegister()">
+          @if (!lastStep()) {
+          <div class="grid grid-rows-3 grid-flow-col gap-x-7">
+            <div class="relative mb-4">
+              <label
+                for="name"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >Nombre</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div class="relative mb-4">
+              <label
+                for="lastname"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >Apellido</label
+              >
+              <input
+                type="text"
+                id="lastname"
+                name="lastname"
+                placeholder="Last Name"
+                class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div class="relative mb-4">
+              <label
+                for="date"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >Your Password</label
+              >
+              <input
+                type="date"
+                id="date"
+                name="date"
+                placeholder="dd/mm/yyyy"
+                class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div class="relative mb-4">
+              <label
+                for="email"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div class="relative mb-4">
+              <label
+                for="password"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >Your Name</label
+              >
+              <input
+                type="password"
+                id="password"
+                name="password"
+                autocomplete="off"
+                placeholder="Password"
+                class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div class="relative mb-4">
+              <label
+                for="country"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >Country</label
+              >
+              <input
+                type="text"
+                id="country"
+                name="country"
+                placeholder="Perú"
+                class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+          </div>
+          } @else {
+          <div class="grid grid-cols-2 gap-x-7">
+            <div class="relative mb-4">
+              <label
+                for="native-language"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >Idioma Nativo</label
+              >
+              <input
+                type="text"
+                id="native-language"
+                name="native-language"
+                placeholder="Español"
+                class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div class="relative mb-4">
+              <label
+                for="fluid-language"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >Idioma Fluido</label
+              >
+              <input
+                type="text"
+                id="fluid-language"
+                name="fluid-language"
+                placeholder="Opcional"
+                class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              />
+            </div>
+            <div class="relative mb-4">
+              <label
+                for="learning-language"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >Idioma que te gustaria aprender</label
+              >
+              <div class="grid grid-cols-2 gap-x-3">
+                <div>
+                  <input
+                    type="text"
+                    id="learning-language-1"
+                    name="native-language-1"
+                    placeholder="Opción 1"
+                    class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="level-language-1"
+                    name="level-language-1"
+                    placeholder="Nivel"
+                    class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="learning-language-2"
+                    name="native-language-2"
+                    placeholder="Opción 2 (Opcional)"
+                    class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="level-language-2"
+                    name="level-language-2"
+                    placeholder="Nivel"
+                    class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="learning-language-3"
+                    name="native-language-3"
+                    placeholder="Opción 3 (Opcional)"
+                    class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="level-language-3"
+                    name="level-language-3"
+                    placeholder="Nivel"
+                    class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="relative mb-4">
+              <label
+                for="topic-to-talk"
+                class="leading-7 text-lg text-gray-600 font-semibold"
+                >¿De qué te gustaria hablar?</label
+              >
+              <div class="grid grid-rows-3 grid-flow-col">
+                <div>
+                  <input
+                    type="text"
+                    id="topic-to-talk-1"
+                    name="topic-to-talk-1"
+                    placeholder="Opción 1"
+                    class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="topic-to-talk-2"
+                    name="topic-to-talk-2"
+                    placeholder="Opción 2"
+                    class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    id="topic-to-talk-3"
+                    name="topic-to-talk-3"
+                    placeholder="Opción 3"
+                    class="mt-2 w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          } @if (lastStep()) {
+          <div class="grid grid-cols-2">
+            <div class="mr-3">
+              <button
+                type="submit"
+                class="mt-2 w-full text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg transition-colors duration-150"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+          }
+        </form>
+        @if (!lastStep()) {
+        <div class="grid grid-cols-2">
+          <div class="mr-8">
+            <button
+              (click)="nextStep()"
+              class="mt-2 w-full text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg transition-colors duration-150"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
