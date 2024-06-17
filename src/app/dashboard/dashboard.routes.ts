@@ -19,6 +19,11 @@ export const dashboardRoutes: Routes = [
           import('@/app/dashboard/pages/profile-page/profile-page.component'),
       },
       {
+        path: 'chat',
+        loadComponent: () =>
+          import('@/app/dashboard/pages/chat-page/chat-page.component'),
+      },
+      {
         path: 'group',
         loadComponent: () =>
           import('@/app/dashboard/pages/group-page/group-page.component'),

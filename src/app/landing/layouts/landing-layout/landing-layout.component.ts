@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavBarComponent } from '@/app/landing/components/nav-bar/nav-bar.component';
+import { NavBarComponent } from '@/app/shared/components/nav-bar/nav-bar.component';
 import { ContentCardComponent } from '@/app/landing/components/content-card/content-card.component';
 import { FooterCardComponent } from '@/app/landing/components/footer-card/footer-card.component';
 

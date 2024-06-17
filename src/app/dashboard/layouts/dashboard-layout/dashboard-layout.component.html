@@ -1,2 +1,8 @@
-<p>dashboard-layout works!</p>
-<router-outlet></router-outlet>
+<div class="h-screen">
+  <nav-bar class="sticky top-0 z-0" entered></nav-bar>
+  <div class="flex flex-row">
+    <side-bar class="invisible lg:visible w-[24rem]"></side-bar>
+    <!-- <div>hola</div> -->
+    <router-outlet class="z-10"></router-outlet>
+  </div>
+</div>
