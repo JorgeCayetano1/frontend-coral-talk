@@ -1,0 +1,64 @@
+<div class="h-full flex flex-col border-solid border-r-2">
+  <div
+    class="flex flex-row space-x-2 font-semibold border-solid border-y-2 p-4"
+  >
+    <span class="text-xl">Conversaciones activas</span>
+    <span
+      class="px-2 bg-gray-100 rounded-md border-solid border-2 border-gray-200 text-base"
+      >6</span
+    >
+  </div>
+  <div class="flex flex-row space-x-2 p-4">
+    <label
+      class="w-full flex flex-row text-gray-500 rounded-md border-solid border-2 border-gray-200 focus-within:border-gray-400 p-2 pl-4 transition-colors duration-150"
+    >
+      <input
+        type="text"
+        class="w-full border-0 p-0 m-0 focus:outline-none focus:shadow-none"
+        placeholder="Buscar..."
+      />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+        />
+      </svg>
+    </label>
+  </div>
+  <!-- Chats -->
+  @for (item of chatItems(); track $index) {
+  <div
+    class="flex flex-row p-4 mb-1 mx-8 rounded-md transition-colors duration-150 hover:bg-gray-200 cursor-pointer"
+    [class.bg-gray-200]="selectedItemIndex() === $index"
+    (click)="setSelectedItemIndex($index)"
+  >
+    <div
+      class="chat-img flex flex-none justify-end items-end w-12 h-12 bg-cover bg-center"
+      [style]="{ 'background-image': 'url(' + item.profileImage + ')' }"
+    >
+      <span
+        class="w-3 h-3 m-0.5 rounded-full border-solid border-2 border-white"
+        [class.bg-green-500]="item.status === 'online'"
+        [class.bg-red-500]="item.status === 'busy'"
+      ></span>
+    </div>
+    <div
+      class="w-full flex flex-col justify-center font-semibold space-y-0 mx-4 pr-28"
+    >
+      <span>{{ item.profileName }}</span>
+      <span
+        class="text-xs overflow-hidden overflow-ellipsis whitespace-nowrap"
+        >{{ item.lastMessage }}</span
+      >
+    </div>
+  </div>
+  }
+</div>
