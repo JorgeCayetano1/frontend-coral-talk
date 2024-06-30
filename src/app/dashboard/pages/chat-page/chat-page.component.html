@@ -1,11 +1,8 @@
-<div class="h-full flex flex-row">
-  <div class="w-80 h-full">
-    <dashboard-search-card [chatItems]="chatItems()"></dashboard-search-card>
-  </div>
-  <div class="chat-messages h-full">
-    <div class="h-full flex flex-col">
+<div class="flex flex-row h-full items-center mx-2">
+  <div class="chat-messages bg-white rounded-xl">
+    <div class="flex flex-col">
       <!-- chat header -->
-      <div class="flex flex-row py-5 px-8 border-solid border-y-2">
+      <div class="flex flex-row py-5 px-8 border-solid border-y">
         <div
           class="chat-img flex flex-none justify-end items-end w-14 h-14 bg-cover bg-center"
           style="
@@ -25,60 +22,115 @@
             >Respondiendo mensaje...</span
           >
         </div>
-        <div class="flex justify-center items-center">
-          <span
-            class="text-xl text-gray-500 bg-gray-100 p-1 px-4 rounded border-solid border-2 border-gray-200"
-            >•••</span
+        <div class="flex justify-center items-center text-gray-500">
+          <div class="bg-gray-200 rounded py-2 px-4 border border-solid">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+              stroke="currentColor"
+              fill="currentColor"
+              class="size-6"
+            >
+              <path
+                d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <!-- chat messages -->
+      <div class="flex flex-col h-[40rem] overflow-y-auto">
+        <div class="flex flex-col items-start py-6 px-16 mr-2 text-gray-500">
+          <span class="font-semibold text-base">Adri Thomas</span>
+          <div
+            class="flex justify-center items-center bg-gray-200 rounded-b-lg rounded-tr-lg p-4 my-2"
           >
+            <span
+              >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum
+              repellendus quae voluptatibus similique explicabo sit obcaecati,
+              ab magnam iusto, nihil ullam repellat totam exercitationem iste
+              illo sunt. Totam, culpa illo.
+            </span>
+          </div>
+          <span class="text-sm">1:55pm</span>
+        </div>
+        <div class="flex flex-col items-end py-6 px-16 ml-2">
+          <div
+            class="flex justify-center items-center bg-blue-500 text-white rounded-t-lg rounded-bl-lg p-4 my-2"
+          >
+            <span
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              perferendis hic minus a quos, sunt libero beatae obcaecati dicta
+              mollitia cumque molestias. Quod dolor minus cumque consequuntur
+              suscipit impedit nesciunt?
+            </span>
+          </div>
+          <span class="text-gray-500 text-sm">1:58pm</span>
+        </div>
+        <div class="flex flex-col items-start py-6 px-16 mr-2 text-gray-500">
+          <span class="font-semibold text-base">Adri Thomas</span>
+          <div
+            class="flex justify-center items-center bg-gray-200 rounded-b-lg rounded-tr-lg p-4 my-2"
+          >
+            <span>Lorem ipsum dolor sit amet. </span>
+          </div>
+          <span class="text-sm">1:55pm</span>
+        </div>
+        <div class="flex flex-col items-end py-6 px-16 ml-2">
+          <div
+            class="flex justify-center items-center bg-blue-500 text-white rounded-t-lg rounded-bl-lg p-4 my-2"
+          >
+            <span>Lorem ipsum dolor sit amet. </span>
+          </div>
+          <span class="text-gray-500 text-sm">1:58pm</span>
+        </div>
+        <div class="flex flex-col items-start py-6 px-16 mr-2 text-gray-500">
+          <span class="font-semibold text-base">Adri Thomas</span>
+          <div
+            class="flex justify-center items-center bg-gray-200 rounded-b-lg rounded-tr-lg p-4 my-2"
+          >
+            <span
+              >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum
+              repellendus quae voluptatibus similique explicabo sit obcaecati,
+              ab magnam iusto, nihil ullam repellat totam exercitationem iste
+              illo sunt. Totam, culpa illo.
+            </span>
+          </div>
+          <span class="text-sm">1:55pm</span>
+        </div>
+        <div class="flex flex-col items-end py-6 px-16 ml-2">
+          <div
+            class="flex justify-center items-center bg-blue-500 text-white rounded-t-lg rounded-bl-lg p-4 my-2"
+          >
+            <span
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              perferendis hic minus a quos, sunt libero beatae obcaecati dicta
+              mollitia cumque molestias. Quod dolor minus cumque consequuntur
+              suscipit impedit nesciunt?
+            </span>
+          </div>
+          <span class="text-gray-500 text-sm">1:58pm</span>
+        </div>
+        <div class="flex flex-col items-start py-6 px-16 mr-2 text-gray-500">
+          <span class="font-semibold text-base">Adri Thomas</span>
+          <div
+            class="flex justify-center items-center bg-gray-200 rounded-b-lg rounded-tr-lg p-4 my-2"
+          >
+            <span>Lorem ipsum dolor sit amet. </span>
+          </div>
+          <span class="text-sm">1:55pm</span>
+        </div>
+        <div class="flex flex-col items-end py-6 px-16 ml-2">
+          <div
+            class="flex justify-center items-center bg-blue-500 text-white rounded-t-lg rounded-bl-lg p-4 my-2"
+          >
+            <span>Lorem ipsum dolor sit amet. </span>
+          </div>
+          <span class="text-gray-500 text-sm">1:58pm</span>
         </div>
       </div>
-      <div class="flex flex-col items-start py-6 px-16 mr-2 text-gray-500">
-        <span class="font-semibold text-base">Adri Thomas</span>
-        <div
-          class="flex justify-center items-center bg-gray-200 rounded-b-lg rounded-tr-lg p-4 my-2"
-        >
-          <span
-            >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum
-            repellendus quae voluptatibus similique explicabo sit obcaecati, ab
-            magnam iusto, nihil ullam repellat totam exercitationem iste illo
-            sunt. Totam, culpa illo.
-          </span>
-        </div>
-        <span class="text-sm">1:55pm</span>
-      </div>
-      <div class="flex flex-col items-end py-6 px-16 ml-2">
-        <div
-          class="flex justify-center items-center bg-blue-500 text-white rounded-t-lg rounded-bl-lg p-4 my-2"
-        >
-          <span
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-            perferendis hic minus a quos, sunt libero beatae obcaecati dicta
-            mollitia cumque molestias. Quod dolor minus cumque consequuntur
-            suscipit impedit nesciunt?
-          </span>
-        </div>
-        <span class="text-gray-500 text-sm">1:58pm</span>
-      </div>
-      <div class="flex flex-col items-start py-6 px-16 mr-2 text-gray-500">
-        <span class="font-semibold text-base">Adri Thomas</span>
-        <div
-          class="flex justify-center items-center bg-gray-200 rounded-b-lg rounded-tr-lg p-4 my-2"
-        >
-          <span>Lorem ipsum dolor sit amet. </span>
-        </div>
-        <span class="text-sm">1:55pm</span>
-      </div>
-      <div class="flex flex-col items-end py-6 px-16 ml-2">
-        <div
-          class="flex justify-center items-center bg-blue-500 text-white rounded-t-lg rounded-bl-lg p-4 my-2"
-        >
-          <span>Lorem ipsum dolor sit amet. </span>
-        </div>
-        <span class="text-gray-500 text-sm">1:58pm</span>
-      </div>
-      <div
-        class="w-full grow self-end flex flex-row p-4 border-solid border-t-2 mt-6"
-      >
+      <!-- chat input -->
+      <div class="w-full grow self-end flex flex-row p-4 border-solid border-t">
         <div class="w-full flex flex-row text-gray-500">
           <label
             class="w-full flex flex-row space-x-2 border-solid rounded border-2 p-4 bg-gray-100 focus-within:border-gray-400 transition-colors duration-150"
@@ -139,5 +191,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div>
+    <dashboard-search-card [chatItems]="chatItems()"></dashboard-search-card>
   </div>
 </div>

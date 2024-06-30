@@ -1,11 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CoralInputComponent } from '@/app/shared/components/coral-input/coral-input.component';
 
 @Component({
   selector: 'app-register-page',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [CoralInputComponent, ReactiveFormsModule],
   templateUrl: './register-page.component.html',
   styleUrl: './register-page.component.css',
 })

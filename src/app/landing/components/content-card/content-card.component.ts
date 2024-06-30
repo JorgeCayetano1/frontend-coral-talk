@@ -16,6 +16,8 @@ export class ContentCardComponent {
   });
   public title = input.required<string>();
   public description = input.required<string>();
+  public image = input.required<string>();
+  public imageClass = input.required<string>();
 
   public toLogin(): void {
     this.router.navigate(['/auth/login']);

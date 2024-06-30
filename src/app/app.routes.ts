@@ -7,4 +7,14 @@ export const routes: Routes = [
   ...authRoutes,
   ...landingRoutes,
   ...dashboardRoutes,
+  {
+    path: 'error',
+    loadComponent: () =>
+      import('@/app/shared/pages/error-page/error-page.component'),
+  },
+  {
+    path: '**',
+    redirectTo: 'error',
+    pathMatch: 'full',
+  },
 ];

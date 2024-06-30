@@ -4,6 +4,7 @@ import {
   inject,
   input,
   output,
+  signal,
 } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
@@ -21,7 +22,15 @@ export class NavBarComponent {
     transform: booleanAttribute,
   });
 
+  public sideBarVisible = signal<boolean>(false);
+  public sideBarToggled = output<boolean>();
+
   public navigateTo(route: string): void {
     this.router.navigate([route]);
+  }
+
+  public toggleSideBar(): void {
+    this.sideBarVisible.set(!this.sideBarVisible());
+    this.sideBarToggled.emit(!this.sideBarVisible());
   }
 }

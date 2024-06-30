@@ -14,6 +14,16 @@ export const dashboardRoutes: Routes = [
           import('@/app/dashboard/pages/explore-page/explore-page.component'),
       },
       {
+        path: 'blog',
+        loadComponent: () =>
+          import('@/app/dashboard/pages/blog-page/blog-page.component'),
+      },
+      {
+        path: 'plan',
+        loadComponent: () =>
+          import('@/app/dashboard/pages/plan-page/plan-page.component'),
+      },
+      {
         path: 'profile',
         loadComponent: () =>
           import('@/app/dashboard/pages/profile-page/profile-page.component'),

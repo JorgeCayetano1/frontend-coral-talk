@@ -22,11 +22,16 @@
       </div>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-      <img
+      <!-- <img
         class="object-cover object-center rounded"
         alt="hero"
         src="https://dummyimage.com/720x600"
-      />
+      /> -->
+      <div
+        class="h-[30rem] w-[30rem] bg-cover bg-center"
+        [class]="imageClass()"
+        [style]="{ 'background-image': 'url(' + image() + ')' }"
+      ></div>
     </div>
   </div>
 </section>
