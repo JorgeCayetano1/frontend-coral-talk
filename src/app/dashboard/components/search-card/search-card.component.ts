@@ -1,8 +1,7 @@
 import {
+  AfterViewInit,
+  booleanAttribute,
   Component,
-  OnInit,
-  computed,
-  effect,
   input,
   output,
   signal,
@@ -18,11 +17,14 @@ import { LastMessagePipe } from '@/app/dashboard/pipes/last-message.pipe';
   templateUrl: './search-card.component.html',
   styleUrl: './search-card.component.css',
 })
-export class SearchCardComponent implements OnInit {
+export class SearchCardComponent implements AfterViewInit {
   public selectedItemIndex = signal<number | null>(null);
 
   public chatItems = input.required<ChatItem[]>();
   public selectedChatItem = output<ChatItem | null>();
+  public isVideoCall = input<boolean, string | boolean>(false, {
+    transform: booleanAttribute,
+  });
 
   public setSelectedItem(valIndex: number) {
     this.selectedItemIndex.update(() => valIndex);
@@ -30,7 +32,7 @@ export class SearchCardComponent implements OnInit {
     this.selectedChatItem.emit(this.chatItems()[valIndex]);
   }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.selectedItemIndex.set(0);
     this.selectedChatItem.emit(this.chatItems()[0]);
   }

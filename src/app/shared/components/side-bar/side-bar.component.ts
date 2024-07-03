@@ -10,4 +10,11 @@ import { RouterModule } from '@angular/router';
 })
 export class SideBarComponent {
   public sideBarVisible = input<boolean>(true);
+
+  public logout() {
+    localStorage.removeItem('localParticipant');
+    localStorage.removeItem('remoteParticipants');
+    localStorage.removeItem('participants');
+    localStorage.removeItem('chatItems');
+  }
 }

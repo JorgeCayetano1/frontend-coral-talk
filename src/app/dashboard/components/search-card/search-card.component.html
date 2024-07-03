@@ -46,15 +46,36 @@
           [class.bg-red-500]="item.status === 'Ocupado'"
         ></span>
       </div>
-      <div
-        class="w-full flex flex-col justify-center font-semibold space-y-0 mx-4 pr-28"
-      >
-        <span>{{ item.profileName }}</span>
-        <span
-          class="text-xs overflow-hidden overflow-ellipsis whitespace-nowrap"
-        >
-          {{ item.message | lastMessage }}
-        </span>
+      <div class="w-full flex flex-row justify-between mx-4">
+        <div class="flex flex-col justify-center font-semibold">
+          <span>{{ item.profileName }}</span>
+          <span
+            class="text-xs overflow-hidden overflow-ellipsis whitespace-nowrap"
+          >
+            {{ item.message | lastMessage }}
+          </span>
+        </div>
+        @if (isVideoCall()) {
+        <div class="flex flex-col justify-start">
+          <button
+            type="button"
+            class="flex flex-row items-center space-x-2 text-gray-500 text-xs bg-white border-0 p-1 px-2 focus:outline-none hover:bg-gray-100 rounded-full transition-colors duration-150"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+              stroke="currentColor"
+              fill="currentColor"
+              class="size-3"
+            >
+              <path
+                d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z"
+              />
+            </svg>
+            <span class="font-semibold">Unir</span>
+          </button>
+        </div>
+        }
       </div>
     </div>
     }

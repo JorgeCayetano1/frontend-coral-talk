@@ -42,35 +42,7 @@
         </div>
       </div>
       <!-- chat messages -->
-      <div class="flex flex-col h-[40rem] overflow-y-auto" #chatContainer>
-        @for (chatItem of getChatItem()?.message; track $index) { @if
-        (chatItem.isMe) {
-        <div class="flex flex-col items-end py-6 px-16 ml-2">
-          <div
-            class="break-words overflow-hidden flex justify-center items-center bg-blue-500 text-white rounded-t-lg rounded-bl-lg p-4 my-2"
-          >
-            <span style="max-width: 40rem">
-              {{ chatItem.message }}
-            </span>
-          </div>
-          <span class="text-gray-500 text-sm">{{ chatItem.time }}</span>
-        </div>
-        } @else {
-        <div class="flex flex-col items-start py-6 px-16 mr-2 text-gray-500">
-          <span class="font-semibold text-base">{{
-            getChatItem()?.profileName
-          }}</span>
-          <div
-            class="break-words overflow-hidden flex justify-center items-center bg-gray-200 rounded-b-lg rounded-tr-lg p-4 my-2"
-          >
-            <span style="max-width: 40rem">
-              {{ chatItem.message }}
-            </span>
-          </div>
-          <span class="text-sm">{{ chatItem.time }}</span>
-        </div>
-        } }
-      </div>
+      <div class="flex flex-col h-[40rem] overflow-y-auto" #chatContainer></div>
       <!-- chat input -->
       <div class="w-full grow self-end flex flex-row p-4 border-solid border-t">
         <form
@@ -144,8 +116,8 @@
   </div>
   <div class="w-[30rem] h-full grow">
     <dashboard-search-card
-      [chatItems]="chatItems()"
-      (selectedChatItem)="getChatItem.set($event)"
+      [chatItems]="getChatItems()"
+      (selectedChatItem)="selectChatItem($event)"
     ></dashboard-search-card>
   </div>
 </div>

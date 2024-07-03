@@ -57,7 +57,13 @@
         class="flex flex-row items-center space-x-4 cursor-pointer"
       >
         <div class="flex flex-col items-end">
-          <span class="bg-red-500 p-0.5 rounded-full"></span>
+          <div class="relative flex flex-col items-end">
+            <div
+              class="animate-ping flex flex-col items-end bg-red-500 p-0.5 rounded-full"
+            ></div>
+            <span class="absolute bg-red-500 p-0.5 rounded-full"></span>
+          </div>
+
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
