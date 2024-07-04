@@ -30,7 +30,7 @@ jobs:
 
       # Route file renaming for GitHub Pages
       - name: Rename route file
-        run: mv dist/coral-talk-frontend/index.html dist/coral-talk-frontend/404.html
+        run: mv dist/coral-talk-frontend/browser/index.html dist/coral-talk-frontend/browser/404.html
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
