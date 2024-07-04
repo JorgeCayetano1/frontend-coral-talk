@@ -13,6 +13,9 @@
             class="w-4 h-4 m-0.5 rounded-full border-solid border-2 border-white"
             [class.bg-green-500]="getChatItem()?.status === 'En línea'"
             [class.bg-red-500]="getChatItem()?.status === 'Ocupado'"
+            [class.bg-gray-500]="getChatItem()?.status === 'Desconectado'"
+            [class.bg-yellow-500]="getChatItem()?.status === 'Ausente'"
+            [class.bg-blue-500]="getChatItem()?.status === 'En llamada'"
           ></span>
         </div>
         <div
