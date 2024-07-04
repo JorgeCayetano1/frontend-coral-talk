@@ -28,9 +28,9 @@ jobs:
       - name: Build
         run: npm run build:prod
 
-      # Route file renaming for GitHub Pages (only for Angular v16 and older versions)
-      # - name: Rename route file
-      #   run: mv dist/coral-talk-frontend/browser/index.html dist/coral-talk-frontend/browser/404.html
+      # Route file renaming for GitHub Pages (in all Versions of Angular)
+      - name: Rename route file
+        run: mv dist/coral-talk-frontend/browser/index.html dist/coral-talk-frontend/browser/404.html
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
