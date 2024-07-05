@@ -1,6 +1,8 @@
 <div class="flex flex-row h-full items-center mx-2">
   <div class="chat-messages w-full h-full py-2">
-    <div class="w-full h-full flex flex-col bg-white rounded-xl">
+    <div
+      class="w-full h-full flex flex-col justify-between bg-white rounded-xl"
+    >
       <!-- chat header -->
       <div class="flex flex-row py-5 px-8 border-solid border-y">
         <div
@@ -47,14 +49,14 @@
       <!-- chat messages -->
       <div class="flex flex-col overflow-y-auto" #chatContainer></div>
       <!-- chat input -->
-      <div class="w-full grow self-end flex flex-row p-4 border-solid border-t">
+      <div class="flex flex-row p-4 border-solid border-t">
         <form
           [formGroup]="form"
           autocomplete="off"
           (ngSubmit)="onSendMessage()"
           class="w-full"
         >
-          <div class="w-full flex flex-row text-gray-500">
+          <div class="flex flex-row text-gray-500">
             <label
               class="w-full flex flex-row space-x-2 border-solid rounded border-2 p-4 bg-gray-100 focus-within:border-gray-400 transition-colors duration-150"
             >
