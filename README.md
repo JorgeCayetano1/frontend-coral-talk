@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
 
+https://jorgecayetano1.github.io/frontend-coral-talk/
+
 ## Pre requisites
 
 - Node.js v20.14.0 or higher (https://nodejs.org/)
